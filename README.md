@@ -9,7 +9,7 @@ The list of codes:
 
  Name        | Language           | Step  | Called By  | Notes  
  ------------- |:-----------:| -----:|------:|-------:
- MergeSampleSheet.pl      | Perl | 1B |User|Merging sample sheets
+ MergeSampleSheet.pl       | 1B |User|Merging sample sheets
 runZcall.py      | Python | 34A |User|Run zCall
  Gender.R      | R      |   39 |User|Checking for sex mismatch
  PCAPlot.R | R      |    43 |User|Draw scatter plot of principle Components
