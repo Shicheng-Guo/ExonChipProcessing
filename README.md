@@ -49,4 +49,7 @@ The list of resources for 12V1_A exome chip:
 
 # Procedure #
 
+the following procedure are based on plink 1.9, plink 2.0, R 3.62 and Python 3.0
+
+
 
