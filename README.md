@@ -10,23 +10,23 @@ The list of codes:
  Name        |  Step  | Called By  | Notes  
  ------------- | -----:|------:|-------:
  MergeSampleSheet.pl       | 1B |User|Merging sample sheets
-runZcall.py      | Python | 34A |User|Run zCall
- Gender.R      | R      |   39 |User|Checking for sex mismatch
- PCAPlot.R | R      |    43 |User|Draw scatter plot of principle Components
- PlotHWE.R | R      |    48 |User|Plot histograms of HWE test
- PlotHeterozygosity.R | R      |    50 |User|Compute heterozygosity and plot histograms of heterozygosity and inbreeding coefficient
-ConsistencyDupSNP.sh	|Shell Script	|51	|User	|Prepare data for checking consistency of duplicated SNPs
-ConsistencyDupSNP.pl	|Perl	|51	|ConsistencyDupSNP.sh	|Checking genotyping consistency of duplciated SNPs, called by ConsistencyDupSNP.sh
-Consistency1000G.sh|	Shell Script|	52|	User	|Prepare data for checking consistency with 1000G
-Consistency1000GSNP.pl|	Perl	|52	|Consistency1000G.sh	|Checking genotyping consistency with 1000G, called by Consistency1000G.sh 
-exclude.pl	|Perl	|52	|Consistency1000G.sh	|Exclude bad SNPs
-AlleleFreq1000G.sh	|Shell Script	|53	|User	|Compute allele frequency of 1000G
-vcf_to_ped.py	|Python	|53	|AlleleFreq1000G.sh	|Convert VCF to ped
-AlleleFreqExome.sh	|Shell Script	|55	|User	|Compute allale frequency of exome chip
-MAFtoAF.py	|Python	|55	|AlleleFreqExome.sh	|Change MAF to allele frequency
-1000GAlleleFreqPlot.R	|R	|56	|User	|Plot allele frequency scatter plot between 1000G and exome chip
-BatchAlleleFreqMatrix.R	|R	|57	|User	|Plot correlation matrix between batches
-filter.pl	|Perl	|52, 55	|AlleleFreqExome.sh, Consistency1000G.sh	|Filter out non-overlapping SNPs
+runZcall.py      | 34A |User|Run zCall
+ Gender.R      | 39 |User|Checking for sex mismatch
+ PCAPlot.R |     43 |User|Draw scatter plot of principle Components
+ PlotHWE.R | 48 |User|Plot histograms of HWE test
+ PlotHeterozygosity.R | 50 |User|Compute heterozygosity and plot histograms of heterozygosity and inbreeding coefficient
+ConsistencyDupSNP.sh	|51	|User	|Prepare data for checking consistency of duplicated SNPs
+ConsistencyDupSNP.pl	|51	|ConsistencyDupSNP.sh	|Checking genotyping consistency of duplciated SNPs, called by ConsistencyDupSNP.sh
+Consistency1000G.sh|		52|	User	|Prepare data for checking consistency with 1000G
+Consistency1000GSNP.pl|52	|Consistency1000G.sh	|Checking genotyping consistency with 1000G, called by Consistency1000G.sh 
+exclude.pl	|52	|Consistency1000G.sh	|Exclude bad SNPs
+AlleleFreq1000G.sh	|53	|User	|Compute allele frequency of 1000G
+vcf_to_ped.py	|53	|AlleleFreq1000G.sh	|Convert VCF to ped
+AlleleFreqExome.sh	|55	|User	|Compute allale frequency of exome chip
+MAFtoAF.py	|55	|AlleleFreqExome.sh	|Change MAF to allele frequency
+1000GAlleleFreqPlot.R	|56	|User	|Plot allele frequency scatter plot between 1000G and exome chip
+BatchAlleleFreqMatrix.R	|57	|User	|Plot correlation matrix between batches
+filter.pl	|52, 55	|AlleleFreqExome.sh, Consistency1000G.sh	|Filter out non-overlapping SNPs
 
 
 For the resources files, you need to download them from the following links and then copy them to the resources folder under exome chip processing protocol codes folder. And you need to unzip 1000G_ExomeChipOverlapVCF.zip to get G1000.vcf.
