@@ -46,3 +46,7 @@ The list of resources for 12V1_A exome chip:
 [chr23_26.txt](https://github.com/slzhao/ExonChipProcessing/releases/download/resources.12V1_A/chr23_26.txt)	|44	|plink|list of SNPs from Chr X, Y and MT
 [integrated_call_samples.20101123.ped](https://github.com/slzhao/ExonChipProcessing/releases/download/resources.12V1_A/integrated_call_samples.20101123.ped)	|53|vcf_to_ped.py|	Downloaded from 1000G
 [integrated_call_samples.20101123.ALL.panel](https://github.com/slzhao/ExonChipProcessing/releases/download/resources.12V1_A/integrated_call_samples.20101123.ALL.panel)	|52	|Consistency1000G.sh|1000 Genome sample information downloaded from 1000G
+
+# Procedure #
+
+
