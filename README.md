@@ -55,16 +55,16 @@ the following procedure are based on plink 1.9, plink 2.0, R 3.62 and Python 3.0
 
 2. Checking for gender mismatch
 
-Checking for race mismatch
+3. Checking for race mismatch
 
-Checking for relatedness
+4. Checking for relatedness
 
-Checking for Hardy-Weinberg equilibrium (HWE) outliers
+5. Checking for Hardy-Weinberg equilibrium (HWE) outliers
 
-Checking for heterozygosity outliers
+6. Checking for heterozygosity outliers
 
-Checking consistency between exome chip genotype and 1000 Genomes Project17 or HapMap18 genotype
+7. Checking consistency between exome chip genotype and 1000 Genomes Project17 or HapMap18 genotype
 
-Checking for minor allele frequency (MAF) consistency between exome chip and 1000 Genomes Project genotypes
+8. Checking for minor allele frequency (MAF) consistency between exome chip and 1000 Genomes Project genotypes
 
-Checking for batch effects
+9. Checking for batch effects
