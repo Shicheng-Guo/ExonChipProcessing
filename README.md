@@ -7,8 +7,8 @@ This site contains the codes and resources for exome chip processing protocol.
 
 The list of codes:
 
- Name        | Language           | Step  | Called By  | Notes  
- ------------- |:-----------:| -----:|------:|-------:
+ Name        |  Step  | Called By  | Notes  
+ ------------- | -----:|------:|-------:
  MergeSampleSheet.pl       | 1B |User|Merging sample sheets
 runZcall.py      | Python | 34A |User|Run zCall
  Gender.R      | R      |   39 |User|Checking for sex mismatch
