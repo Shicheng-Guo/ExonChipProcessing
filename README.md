@@ -70,9 +70,15 @@ rsAims<-db[na.omit(match(exmAims[,1],db$V3)),]
 write.table(rsAims,file="rsAims.bed",quote=F,row.names = F,col.names = F,sep="\t")
 write.table(rsAims[,6],file="rsAims.txt",quote=F,row.names = F,col.names = F,sep="\t")
 
-plink --bfile $input --extract rsAims.txt --out AIMs
+plink --bfile $input.1 --extract rsAims.txt --recode --out AIMs
 
-> par.PED.EIGENSTRAT
+perl -p -i -e '{/-9/1/g}' AIMs.map
+
+cd ~/hpd/tools/
+git clone https://github.com/chrchang/eigensoft.git
+
+vim par.PED.EIGENSTRAT
+
 genotypename:    AIMs.ped
 snpname:         AIMs.map
 indivname:       AIMs.ped
@@ -82,9 +88,15 @@ snpoutname:      AIMs.snp
 indivoutname:    AIMs.ind
 familynames:     NO
 
-convertf -p par.PED.EIGENSTRAT > eigen.log
-perl smartpca.perl -i AIMs.geno -a AIMs.SNP -b AIMs.ind -o AIMs.pca -p -m 0
-Rscript PCAPlot.R AIMs.pca {racefile}
+smartpca.perl -i AIMs.geno -a AIMs.snp -b AIMs.ind -o AIMs.pca -e AIMs.eval -l AIMs.log -p AIMs -m 0
+
+smartpca -p AIMs.pca.par >AIMs.log
+ploteig -i AIMs.pca.evec -c 1:2  -p Control  -x  -y  -o AIMs.xtxt
+evec2pca.perl 10 AIMs.pca.evec AIMs.ind AIMs.pca
+
+wget https://raw.githubusercontent.com/Shicheng-Guo/ExonChipProcessing/master/PCAPlot.R
+Rscript PCAPlot.R AIMs.pca
+
 ```
 4. Checking for relatedness
 ```
