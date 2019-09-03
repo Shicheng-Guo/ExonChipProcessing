@@ -65,7 +65,7 @@ Rscript Gender.R $input.1.sexcheck sex.checking.jpeg
 3. Checking for race mismatch
 ```
 exmAims<-read.table("https://raw.githubusercontent.com/Shicheng-Guo/ExonChipProcessing/master/exmAIMs.txt")
-db<-read.table("~/hpc/db/Illumina_CoreExome_Beadchip.hg19.exm2rs.bed.txt")
+db<-read.table("https://raw.githubusercontent.com/Shicheng-Guo/ExonChipProcessing/master/Illumina_CoreExome_Beadchip.hg19.exm2rs.bed.txt")
 rsAims<-db[na.omit(match(exmAims[,1],db$V3)),]
 write.table(rsAims,file="rsAims.bed",quote=F,row.names = F,col.names = F,sep="\t")
 write.table(rsAims[,6],file="rsAims.txt",quote=F,row.names = F,col.names = F,sep="\t")
