@@ -82,6 +82,7 @@ snpoutname:      AIMs.snp
 indivoutname:    AIMs.ind
 familynames:     NO
 
+convertf -p par.PED.EIGENSTRAT > eigen.log
 perl smartpca.perl -i AIMs.geno -a AIMs.SNP -b AIMs.ind -o AIMs.pca -p -m 0
 Rscript PCAPlot.R AIMs.pca {racefile}
 ```
