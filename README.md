@@ -96,7 +96,6 @@ evec2pca.perl 10 AIMs.pca.evec AIMs.ind AIMs.pca
 
 wget https://raw.githubusercontent.com/Shicheng-Guo/ExonChipProcessing/master/PCAPlot.R
 Rscript PCAPlot.R AIMs.pca
-
 ```
 4. Checking for relatedness
 ```
