@@ -54,33 +54,34 @@ the following procedure are based on plink 1.9, plink 2.0, R 3.62 and Python 3.0
 1. Converting all SNPs to the forward strand
 ```
 input="RA2020"
-plink –-noweb --file $input --make-bed --out $input
+plink --file $input --make-bed --out $input
 ```
 2. Checking for gender mismatch
 ```
-plink --noweb --bfile $input --maf 0.1 --check-sex --out $input.1
-Rscript Gender.R {outfile}.sexcheck {gender}.jpeg
+plink --bfile $input --maf 0.1 --check-sex --out $input.1
+wget https://raw.githubusercontent.com/Shicheng-Guo/ExonChipProcessing/master/Gender.R
+Rscript Gender.R $input.1.sexcheck sex.checking.jpeg
 ```
 3. Checking for race mismatch
 ```
-plink --noweb --bfile $input --extract AIMs.txt --outAIMs.txt
+plink --bfile $input --extract AIMs.txt --outAIMs.txt
 perl smartpca.perl -i {filename}.geno -a {filename}.SNP -b {filename}.ind -o {out}.pca -p -m 0
 Rscript PCAPlot.R {out}.pca {racefile}
 ```
 4. Checking for relatedness
 ```
-plink –-noweb --bfile {exome} --maf 0.1 --exclude chr23_26.txt --indep-pairwise 50 5 0.2 --out {indepSNP}
-plink --noweb --bfile {exome} --extract {indepSNP.prune.in} --genome --out {outfile}
+plink --bfile {exome} --maf 0.1 --exclude chr23_26.txt --indep-pairwise 50 5 0.2 --out {indepSNP}
+plink --bfile {exome} --extract {indepSNP.prune.in} --genome --out {outfile}
 ```
 5. Checking for Hardy-Weinberg equilibrium (HWE) outliers
 ```
-plink --noweb --bfile {exome} --keep {Caucasian_list} --make-bed --out {Caucasian}
-plink --noweb --bfile {Caucasian} --maf 0.05 --hardy --out {outfile}
+plink --bfile {exome} --keep {Caucasian_list} --make-bed --out {Caucasian}
+plink --bfile {Caucasian} --maf 0.05 --hardy --out {outfile}
 Rscript PlotHWE.R {outfile}.hwe
 ```
 6. Checking for heterozygosity outliers
 ```
-plink --noweb --bfile {exome} --extract {indepSNP}.prune.in --het --out {outfile}
+plink --bfile {exome} --extract {indepSNP}.prune.in --het --out {outfile}
 Rscript PlotHeterozygosity.R {outfile}.het
 ```
 7. Checking consistency between exome chip genotype and 1000 Genomes Project17 or HapMap18 genotype
