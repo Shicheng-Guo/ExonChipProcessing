@@ -70,9 +70,20 @@ rsAims<-db[na.omit(match(exmAims[,1],db$V3)),]
 write.table(rsAims,file="rsAims.bed",quote=F,row.names = F,col.names = F,sep="\t")
 write.table(rsAims[,6],file="rsAims.txt",quote=F,row.names = F,col.names = F,sep="\t")
 
-plink --bfile $input --extract rsAims.txt --outAIMs.txt
-perl smartpca.perl -i {filename}.geno -a {filename}.SNP -b {filename}.ind -o {out}.pca -p -m 0
-Rscript PCAPlot.R {out}.pca {racefile}
+plink --bfile $input --extract rsAims.txt --out AIMs
+
+> par.PED.EIGENSTRAT
+genotypename:    AIMs.ped
+snpname:         AIMs.map
+indivname:       AIMs.ped
+outputformat:    EIGENSTRAT
+genotypeoutname: AIMs.geno
+snpoutname:      AIMs.snp
+indivoutname:    AIMs.ind
+familynames:     NO
+
+perl smartpca.perl -i AIMs.geno -a AIMs.SNP -b AIMs.ind -o AIMs.pca -p -m 0
+Rscript PCAPlot.R AIMs.pca {racefile}
 ```
 4. Checking for relatedness
 ```
