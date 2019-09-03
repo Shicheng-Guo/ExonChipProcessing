@@ -76,6 +76,11 @@ perl -p -i -e '{/-9/1/g}' AIMs.map
 
 cd ~/hpd/tools/
 git clone https://github.com/chrchang/eigensoft.git
+make all
+
+cp ./src/eigenstrat ./bin
+cp ./src/smartpca ./bin
+cp ./src/perlsrc ./bin
 
 vim par.PED.EIGENSTRAT
 
